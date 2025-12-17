@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+}
+
+/* CLOCK */
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(255,255,255,0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow:
+    0 0 15px rgba(255,255,255,0.25),
+    0 0 40px rgba(255,255,255,0.15);
+}
+
+/* Soft glow */
+.clock::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255,255,255,0.15),
+    rgba(0,0,0,0) 70%);
+  z-index: -1;
+}
+
+/* Time */
+.time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 48px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Dots */
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+/* Hour */
+.hour-dot {
+  width: 14px;
+  height: 14px;
+  background: white;
+  box-shadow: 0 0 12px rgba(255,255,255,0.9);
+}
+
+/* Minute */
+.minute-dot {
+  width: 9px;
+  height: 9px;
+  background: #00ff6a;
+  box-shadow: 0 0 12px rgba(0,255,106,0.9);
+}
+
+/* Second */
+.second-dot {
+  width: 6px;
+  height: 6px;
+  background: #00e5ff;
+  box-shadow:
+    0 0 10px rgba(0,229,255,1),
+    0 0 20px rgba(0,229,255,0.8);
+}
